@@ -6,7 +6,10 @@ public class Gerente {
 
     Scanner sc = new Scanner(System.in);
 
-public int addProduto(){
+public int addProduto(int quantidade){
+    return this.quantidade += quantidade;
+
+
 
 }
 public void relatorioVendas(){
@@ -35,7 +38,10 @@ public void menuGerente(){
 
     switch (opcaoGerente) {
         case 1:
-            addProduto();
+            System.out.printf("Digite a quantidade do produto: ");
+            quantidade = sc.nextInt();
+            addProduto(quantidade);
+            System.out.printf(" " + this.quantidade);
             break;
         case 2:
             relatorioVendas();

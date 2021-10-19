@@ -20,21 +20,26 @@ public class Menu {
             System.out.printf("Opção Escolhida: %d", opcao);
             System.out.println();
 
-            switch (opcao) {
-                case 1:
-                    gerente();
-                    break;
-                case 2:
-                    funcionario();
-                    break;
-                case 0:
-                    //finalizar programa
-                    break;
+            do {
+                switch (opcao) {
 
-                default:
-                    System.err.println("Opção Inválida! ");
-                    break;
-            }
+                        case 1:
+                            gerente();
+                            break;
+                        case 2:
+                            funcionario();
+                            break;
+                        case 0:
+                            //finalizar programa
+                            System.out.printf("PROGRAMA FINALIZADO");
+                            break;
+
+                        default:
+                            System.err.println("Opção Inválida! ");
+                            break;
+
+                }
+            }while (opcao == 1 && opcao == 2);
     }
 
     public void gerente(){

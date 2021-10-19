@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Supermercado" />
         <module name="trab_supermercado-master" />
+        <module name="trab_supermercado" />
       </profile>
     </annotationProcessing>
   </component>
