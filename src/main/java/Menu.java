@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
-
     public int opcao = 0;
 
     public void menuInicial() {
@@ -15,7 +14,7 @@ public class Menu {
             System.out.println(" |     2 - VENDEDOR     |");
             System.out.println(" |     0 - SAIR         |");
             System.out.println("  ----------------------");
-
+            System.out.println();
             System.out.print("Digite opção desejada: ");
             opcao = sc.nextInt();
             System.out.printf("Opção Escolhida: %d", opcao);
@@ -23,10 +22,10 @@ public class Menu {
 
             switch (opcao) {
                 case 1:
-                    menuGerente();
+                    gerente();
                     break;
                 case 2:
-                    //chamar funcao funcionario
+                    funcionario();
                     break;
                 case 0:
                     //finalizar programa
@@ -38,10 +37,17 @@ public class Menu {
             }
     }
 
-    public void menuGerente(){
+    public void gerente(){
+        Gerente geren = new Gerente();
         System.out.println("Você selecionou gerente");
-
+        geren.menuGerente();
     }
+    public void funcionario(){
+        Funcionario func = new Funcionario("Ana",1);
+        System.out.println("Você selecionou funcionario");
+        func.menuFuncionario();
+    }
+//teste
 }
 
 
