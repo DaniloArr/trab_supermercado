@@ -9,3 +9,5 @@ Cada caixa está equipado com uma balança, o que permite vendas de produtos tan
  - Permitir a venda de produtos, registrando em qual caixa e por qual funcionário cada venda foi realizada. O sistema deve informar o valor total da venda. O pagamento das vendas pode ocorrer em dinheiro ou cartão. Caso seja em dinheiro, o sistema deve informar o valor do troco.
  - Permitir aos clientes a consulta ao preço dos produtos em leitores que ficam espalhados pelo supermercado.
  - Permitir ao gerente emitir relatórios de vendas e de estoque. O relatório de vendas deve informar, para cada caixa, os valores totais das vendas realizadas no dia, assim como o funcionário responsável por cada venda. O relatório de estoque deve informar as quantidades disponíveis por produto no início do dia e no final do dia.
+
+Desenvolvido por Vinícius e Danilo

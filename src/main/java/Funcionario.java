@@ -1,45 +1,55 @@
-import java.util.Scanner;
-
-public class Funcionario extends Gerente {
+public class Funcionario implements IOperacoesDoEstoque {
     private String nome;
-    private int caixa;
+    private String userName;
+    private String senha;
 
-    public Funcionario(String nome, int caixa){
+    public Funcionario(String nome, String userName, String senha) {
         this.nome = nome;
-        this.caixa = caixa;
+        this.userName = userName;
+        this.senha = senha;
     }
 
-    public void menuFuncionario(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("\n\n## Sistema de controle Supermercado ##");
-        System.out.println();
-
-        System.out.println("  ------------------------------");
-        System.out.println(" |     1 - VENDER               |"); //Registra caixa, determinando funcionario e valor total
-        System.out.println(" |     0 - SAIR                 |");
-        System.out.println("  ------------------------------");
-
-        System.out.print("Digite opção desejada: ");
-        int opcaoFuncionario = sc.nextInt();
-        System.out.printf("Opção Escolhida: %d", opcaoFuncionario);
-        System.out.println();
-
-        switch (opcaoFuncionario) {
-            case 1:
-                vender();
-                break;
-            case 0:
-                break;
-            default:
-                System.err.println("Opção Inválida! ");
-                break;
-        }
+    public String getNome() {
+        return nome;
     }
 
-    public void vender(){
-
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    @Override
+    public void adicionarProduto(Produto produto, double quantidade) {
+        Estoque.adicionarProduto(produto, quantidade);
+    }
+
+    @Override
+    public void removerProduto(String codigo, double quantidade) {
+        Estoque.removerProduto(codigo, quantidade);
+    }
+
+    @Override
+    public void mostrarEstoque() {
+        Estoque.mostrarEstoque(1);
+    }
+
 }
+
 
 
 

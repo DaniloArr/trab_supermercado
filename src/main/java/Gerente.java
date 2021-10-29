@@ -1,61 +1,37 @@
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
-public class Gerente {
-    public String nome;
-    private int quantidade;
+public class Gerente extends Funcionario {
 
-    Scanner sc = new Scanner(System.in);
+    public Gerente(String nome, String userName, String senha) {
+        super(nome, userName, senha);
+        Estoque.copiarEstoque();
+    }
 
-public int addProduto(int quantidade){
-    return this.quantidade += quantidade;
+    public void emitirRelatorioDeEstoque() {
+        Scanner scanner = new Scanner(System.in);
+        Utilitario.ImprimaMensagem("*                     RELATÓRIO DE ESTOQUE                      *",
+                "*                    Estoque no INÍCIO do dia                   *");
+        Estoque.exibirCopiaInicialDoEstoque();
 
+        Utilitario.ImprimaMensagem("*                  Estoque no FINAL do dia                      *");
+        Estoque.mostrarEstoque(1);
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Aperte ENTER para continuar ...");
+        scanner.nextLine();
+    }
 
-}
-public void relatorioVendas(){
-
-}
-
-public void relatorioEstoque(){
-
-}
-
-public void menuGerente(){
-    System.out.println("\n\n## Sistema de controle Supermercado ##");
-    System.out.println();
-
-    System.out.println("  ------------------------------");
-    System.out.println(" |     1 - ADD PRODUTO          |");
-    System.out.println(" |     2 - RELATORIO VENDAS     |");
-    System.out.println(" |     3 - RELATORIO ESTOQUE    |");
-    System.out.println(" |     0 - SAIR                 |");
-    System.out.println("  ------------------------------");
-
-    System.out.print("Digite opção desejada: ");
-    int opcaoGerente = sc.nextInt();
-    System.out.printf("Opção Escolhida: %d", opcaoGerente);
-    System.out.println();
-
-    switch (opcaoGerente) {
-        case 1:
-            System.out.printf("Digite a quantidade do produto: ");
-            quantidade = sc.nextInt();
-            addProduto(quantidade);
-            System.out.printf(" " + this.quantidade);
-            break;
-        case 2:
-            relatorioVendas();
-            break;
-        case 3:
-            relatorioEstoque();
-            break;
-        case 0:
-            break;
-        default:
-            System.err.println("Opção Inválida! ");
-            break;
+    public void emitirRelatorioDeVendas(List<Caixa> caixas){
+        Iterator i = caixas.iterator();
+        // acessa caixa por caixa
+        while (i.hasNext()) {
+            Caixa caixa = (Caixa)i.next();
+            Utilitario.ImprimaMensagem(
+                    "*                   Relatório do Caixa: "+ caixa.getNumeroDoCaixa() +"                  *");
+            caixa.relatorioCaixa();
+            Utilitario.Continuar();
         }
-
-
     }
 }
