@@ -6,7 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 public class Estoque {
-    // key = codigo do produto , value = lista com a quantidade do mesmo produto em estoque
+    // key = codigo do produto
+    // value = lista com a quantidade do mesmo produto em estoque
     public static Map<String, List<Produto>> estoque = new LinkedHashMap<String, List<Produto>>();
     private static Map<String, List<Produto>> copiaDoEstoque;
     private static Produto p;

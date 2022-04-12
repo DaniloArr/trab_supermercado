@@ -1,7 +1,7 @@
 public class Leitor {
 
     public static void mostrarValorProduto(String codigo){
-        Utilitario.ImprimaMensagem("*               Procurando produto de cógido '" + codigo + "'           *");
+        Utilitario.ImprimaMensagem("*               Procurando produto de código '" + codigo + "'           *");
 
         Produto produto = Estoque.seekProduto(codigo);
         if(produto != null) {

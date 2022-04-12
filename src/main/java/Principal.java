@@ -185,7 +185,7 @@ public class Principal {
                                             if(p != null){
 
                                                 boolean verificacao;
-                                                if(p instanceof ProdutoUnitario){
+                                                if(p instanceof ProdutoUnitario){              //instanceof é conhecido como operador de comparação de tipos, porque compara a instância com o tipo.
                                                     System.out.println("Digite a quantidade de "+p.getNome().toUpperCase()+": ");
                                                     quantidade = scanner.nextInt();
                                                     if(quantidade == 0){
@@ -483,6 +483,7 @@ public class Principal {
         private static void MostrarCaixasEmFuncionamento(){
             if (ObtenhaCaixasDisponiveis().isEmpty()) {
                 System.out.println("Nenhum caixa está atendendo no momento. =(");
+
             }
             else {
                 Iterator i = ObtenhaCaixasDisponiveis().iterator();
